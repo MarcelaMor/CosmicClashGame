@@ -3,25 +3,29 @@ const userText = document.querySelector("#userText");
 const computerText = document.querySelector("#computerText");
 const resultText = document.querySelector("#resultText");
 const choiceBtns = document.querySelectorAll(".choiceBtn");
-const userCounter = document.querySelectorAll("#userPoints");
-const computerCounter = document.querySelectorAll("#computerPoints");
+const userCounter = document.querySelector("#userPoints");
+const computerCounter = document.querySelector("#computerPoints");
+const tieCounter = document.querySelector("#ties");
 
+//Variable declarations
 let user;
 let computer;
-let result;
-let computerPoints;
-let userPoints;
-let draws;
+let computerPoints = 0;
+let userPoints = 0;
+let tiePoints = 0;
 
-
+//Adding click listener to buttons
 choiceBtns.forEach(button => button.addEventListener("click", () => {
 
     user = button.textContent;
     computerTurn();
     userText.textContent = `User: ${user}`;
     computerText.textContent = `Computer: ${computer}`;
-    resultText.textContent = checkWinner();
     result = checkWinner();
+    resultText.textContent = result;
+    setPoints(result);
+    console.log(result);
+
 }));
 
 
@@ -94,24 +98,24 @@ function checkWinner() {
     else if (computer == "Spock") {
         return (user == "Paper") ? "Congratulations!" : "Aww you lost!"
     }
+}
 
 
 
-
-/* Update score function */
-function setPoints(result) {  // Update score based on result
-    if (result === "Congratulations!") {    // Check result and update score
-        userScore++;    // Incriment users score if they won
+//Points results- 
+function setPoints(result) {  // Takes "result" variable to check current winning condition
+    if (result === "Congratulations!") {  
+        userPoints++;    // Increments user point by one
     } else if (result === "Aww you lost!") {
-        opponentScore++;    // Incriment opponent score if they won
+        computerPoints++;    // Increments computer point by one
     } else if (result === "It's a tie!") {
-        drawScore++;    // Incriment draw score if they game ended in draw
+        tiePoints++;   // Increments when it's a tie
     }
 
-
-    userScoreText.textContent = `User: ${userScore}`;   // Update user score text
-    opponentScoreText.textContent = `Opponent: ${opponentScore}`;   // Update opponent score text
-    drawScoreText.textContent = `Draw: ${drawScore}`;   // Update draw score text
+    //Adds points to the corresponding element 
+    userCounter.textContent = `Your points: ${userPoints}`;   
+    computerCounter.textContent = `Computer: ${computerPoints}`;   
+    tieCounter.textContent = `Tie!: ${tiePoints}`;   
 }
 
-}
+
