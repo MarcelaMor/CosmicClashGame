@@ -13,6 +13,8 @@ let computer;
 let computerPoints = 0;
 let userPoints = 0;
 let tiePoints = 0;
+let timesPlayed = 0;
+const maxRounds = 7;
 
 //Adding click listener to buttons
 choiceBtns.forEach(button => button.addEventListener("click", () => {
@@ -23,8 +25,12 @@ choiceBtns.forEach(button => button.addEventListener("click", () => {
     computerText.textContent = `Computer: ${computer}`;
     result = checkWinner();
     resultText.textContent = result;
-    setPoints(result);
-    console.log(result);
+    timesPlayed++;
+    if (timesPlayed === 7) {
+        finishGame();
+    } else {
+        setPoints(result);
+    }
 
 }));
 
@@ -104,7 +110,7 @@ function checkWinner() {
 
 //Points results- 
 function setPoints(result) {  // Takes "result" variable to check current winning condition
-    if (result === "Congratulations!") {  
+    if (result === "Congratulations!") {
         userPoints++;    // Increments user point by one
     } else if (result === "Aww you lost!") {
         computerPoints++;    // Increments computer point by one
@@ -113,9 +119,12 @@ function setPoints(result) {  // Takes "result" variable to check current winnin
     }
 
     //Adds points to the corresponding element 
-    userCounter.textContent = `Your points: ${userPoints}`;   
-    computerCounter.textContent = `Computer: ${computerPoints}`;   
-    tieCounter.textContent = `Tie!: ${tiePoints}`;   
+    userCounter.textContent = `Your points: ${userPoints}`;
+    computerCounter.textContent = `Computer: ${computerPoints}`;
+    tieCounter.textContent = `Tie!: ${tiePoints}`;
 }
 
 
+function finishGame() {
+    
+}
