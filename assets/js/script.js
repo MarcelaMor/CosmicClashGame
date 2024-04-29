@@ -11,8 +11,8 @@ choiceBtns.forEach(button => button.addEventListener("click", () => {
 
     user = button.textContent;
     computerTurn(); 
-    userText.textContent = 'User: ${user}' ;
-    computerText.textContent = 'Computer: ${computer}' ;
+    userText.textContent = `User: ${user}` ;
+    computerText.textContent = `Computer: ${computer}` ;
     resultText.textContent = checkWinner();
 }));
 
@@ -23,6 +23,7 @@ function  computerTurn(){
     /** 3 choices, remeber to change this when adding lizard, spock */
 
     const randNum = Math.floor(Math.random() * 3) + 1;
+    console.log(randNum);
  
     switch(randNum){
 
@@ -47,13 +48,13 @@ function checkWinner(){
     if(user == computer){
         return "It's a tie!";
     }
-    else if (computer == "Rock"){
+    else if(computer == "Rock"){
         return (user == "Papper") ? "Congratulations!" : "Aww You lost!" 
     }
-    else if (computer == "Paper"){
+    else if(computer == "Paper"){
         return (user == "Scissor") ? "Congratulations!" : "Aww You lost!"
     }
-    else if (computer == "Scissors"){
+    else if(computer == "Scissors"){
         return (user == "Rock") ? "Congratulations!" : "Aww You lost!"
     }
 }
