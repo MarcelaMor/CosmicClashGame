@@ -1,0 +1,36 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(93, 121, 149);
+    margin: 5;
+    text-align: center;
+
+
+    #userText {
+        color: rgb(1, 31, 57);
+    }
+
+    #computerText {
+        color:#571212
+    }
+
+}
+
+/*Design for buttons*/
+.choiceBtn {
+    line-height: 40px;
+    width: 250px;
+    border-radius: 30px;
+    padding: 30; 
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 10px;
+    box-shadow: 12px 12px #1b3236;
+    cursor: pointer;
+    background-color: #571212;
+    color: white;
+    font-weight: 700;
+
+}
+
