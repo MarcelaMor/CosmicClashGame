@@ -25,14 +25,14 @@ function computerTurn() {
     const randNum = Math.floor(Math.random() * 5) + 1;
 
     switch (randNum) {   // Allows me to execute one of these code blocks. 
-         i give it      //It performs depending on what variations/condition it has
+        //It performs depending on what "argument" it receives from "randNum" variable
 
         case 1:
             computer = "Rock"
             break;     //The break statement terminates the switch statement, if failed it continues to the next case
 
         case 2:
-            computer = "Papper"
+            computer = "Paper"
             break;
 
         case 3:
@@ -50,19 +50,43 @@ function computerTurn() {
     }
 }
 
-/** Winner funtions and rules */
+/** Winner conditions and rules */
 //Dont forget to add 2 more
 function checkWinner() {
     if (user == computer) {
         return "It's a tie!";
     }
     else if (computer == "Rock") {
-        return (user == "Papper") ? "Congratulations!" : "Aww You lost!"
+        return (user == "Paper") ? "Congratulations!" : "Aww You lost!"
+    }
+    else if (computer == "Rock") {
+        return (user == "Spock") ? "Congratulations!" : "Aww You lost!"
     }
     else if (computer == "Paper") {
         return (user == "Scissor") ? "Congratulations!" : "Aww You lost!"
     }
+    else if (computer == "Paper") {
+        return (user == "Lizard") ? "Congratulations!" : "Aww You lost!"
+    }
     else if (computer == "Scissors") {
         return (user == "Rock") ? "Congratulations!" : "Aww You lost!"
     }
+    else if (computer == "Scissors") {
+        return (user == "Spock") ? "Congratulations!" : "Aww You lost!"
+    }
+    else if (computer == "Lizard") {
+        return (user == "Rock") ? "Congratulations!" : "Aww You lost!"
+    }
+    else if (computer == "Lizard") {
+        return (user == "Scissors") ? "Congratulations!" : "Aww You lost!"
+    }
+    else if (computer == "Spock") {
+        return (user == "Lizard") ? "Congratulations!" : "Aww You lost!"
+    }
+    else if (computer == "Spock") {
+        return (user == "Paper") ? "Congratulations!" : "Aww You lost!"
+    }
+
+
+
 }
