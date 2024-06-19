@@ -8,6 +8,16 @@ body {
     text-align: center;
 }
 
+.rulesandprogress{
+    display: flex;
+}
+
+/* Rules text-box design */
+.rules-div{
+    background-color: hsla(290, 100%, 77%, 0.527);
+    width: 25vw;
+}
+
 #gameProgress {
     background-color: #6868835c;
     border: 3px solid;
@@ -65,3 +75,4 @@ body {
     color: white;
     font-weight: 700;
 }
+

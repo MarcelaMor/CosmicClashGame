@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <title>Cosmic Clash</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- Choices made & results  -->
-    <div id="gameProgress">
-        <h1 class="gameText" id="userText">User: </h1>
-        <h1 class="gameText" id="computerText">Computer: </h1>
-        <h1 class="gameText" id="resultText">Result: </h1>
+    <div class="rulesandprogress">
+      <div class="rules-div">
+        <div>
+          <h2>Rules</h2>
+          <p>
+            The rules are as follows: Rock defeats Scissors & Lizard; Paper
+            defeats Rock and Spock; Scissors defeats Paper and Lizard; Lizard
+            defeats Spock and Paper; Spock defeats Scissors and Rock.
+          </p>
+        </div>
+      </div>
+      <div id="gameProgress">
+        <h1 class="gameText" id="userText">User:</h1>
+        <h1 class="gameText" id="computerText">Computer:</h1>
+        <h1 class="gameText" id="resultText">Result:</h1>
+      </div>
     </div>
 
     <!-- Player hand choice -->
     <div>
-        <button class="choiceBtn">Rock</button>
-        <button class="choiceBtn">Paper</button>
-        <button class="choiceBtn">Scissors</button>
-        <button class="choiceBtn">Lizard</button>
-        <button class="choiceBtn">Spock</button>
+      <button class="choiceBtn">Rock</button>
+      <button class="choiceBtn">Paper</button>
+      <button class="choiceBtn">Scissors</button>
+      <button class="choiceBtn">Lizard</button>
+      <button class="choiceBtn">Spock</button>
     </div>
 
     <!-- Points tracking -->
     <div id="points">
-        <p id="userPoints">Your points: 0</p>
-        <p id="computerPoints">Computer points: 0</p>
-        <p id="ties">Total ties: 0</p>
+      <p id="userPoints">Your points: 0</p>
+      <p id="computerPoints">Computer points: 0</p>
+      <p id="ties">Total ties: 0</p>
     </div>
 
     <script src="assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
