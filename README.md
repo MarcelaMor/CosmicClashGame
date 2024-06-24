@@ -69,8 +69,8 @@ The game is deployed in Github pages.
 ![342180054-875e0e00-9b67-40b3-bbdb-62d09a7b3ca3](https://github.com/MarcelaMor/CosmicClashGame/assets/159925451/f8a857ac-3254-4bb3-81f4-c9d89af82825)
 
 - I found this button and went ahead and deployed the game.
-
-![342180269-a071d027-a9a6-47dd-a1bd-d8e4eea6777d](https://github.com/MarcelaMor/CosmicClashGame/assets/159925451/18e0e340-d993-4d42-8227-ec7a12182c9e)
+  
+![image](https://github.com/MarcelaMor/CosmicClashGame/assets/159925451/94bb8299-f465-4368-ba9c-a30a0538aedf)
 
 - Fully deployed.
 
