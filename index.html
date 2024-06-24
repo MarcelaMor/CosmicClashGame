@@ -4,46 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
-
-    <title>Cosmic Clash</title>
   </head>
 
   <body>
-    <!-- Choices made & results  -->
-    <div class="rulesandprogress">
-      <div class="rules-div">
-        <div>
-          <h2>Rules</h2>
-          <p>
-            The rules are as follows: Rock defeats Scissors & Lizard; Paper
-            defeats Rock and Spock; Scissors defeats Paper and Lizard; Lizard
-            defeats Spock and Paper; Spock defeats Scissors and Rock.
-          </p>
+      <div class="frame">
+        <div class="mainbox">
+          <div id="points">
+            <h2 id="userPoints">Your score: 0</h2>
+            <h2 id="computerPoints">Computer score: 0</h2>
+            <h2 id="ties">Ties: 0</h2>
+          </div>
+          <div class="game-title-div"><h1 id="game-title">Cosmic Clash</h1></div>
+          <div id="gameProgress">
+            <h2 class="gameText" id="userText">You: -</h2>
+            <h2 class="gameText" id="computerText">Computer: -</h2>
+            <h2 class="gameText" id="resultText">- - -</h2>
+          </div>
+        </div>
+        <!-- Player hand choice -->
+        <div class="buttons-div">
+          <button class="choiceBtn">Rock</button>
+          <button class="choiceBtn">Paper</button>
+          <button class="choiceBtn">Scissors</button>
+          <button class="choiceBtn">Lizard</button>
+          <button class="choiceBtn">Spock</button>
+        </div>
+        <script src="assets/js/script.js"></script>
+        <div class="rulesandprogress">
+          <div class="rules-div">
+            <h2>Rules</h2>
+            <p>The rules are as follows:</p>
+            <p>Rock defeats Scissors and Lizard;</p>
+            <p>
+              Paper defeats Rock and Spock;
+            </p>
+            <p>Scissors defeats Paper and Lizard;</p>
+            <p>
+              Lizard defeats Spock and Paper;
+            </p>
+            <p>Spock defeats Scissors and Rock.</p>
+            <p></p>
+          </div>
         </div>
       </div>
-      <div id="gameProgress">
-        <h1 class="gameText" id="userText">User:</h1>
-        <h1 class="gameText" id="computerText">Computer:</h1>
-        <h1 class="gameText" id="resultText">Result:</h1>
-      </div>
-    </div>
-
-    <!-- Player hand choice -->
-    <div>
-      <button class="choiceBtn">Rock</button>
-      <button class="choiceBtn">Paper</button>
-      <button class="choiceBtn">Scissors</button>
-      <button class="choiceBtn">Lizard</button>
-      <button class="choiceBtn">Spock</button>
-    </div>
-
-    <!-- Points tracking -->
-    <div id="points">
-      <p id="userPoints">Your points: 0</p>
-      <p id="computerPoints">Computer points: 0</p>
-      <p id="ties">Total ties: 0</p>
-    </div>
-
-    <script src="assets/js/script.js"></script>
   </body>
 </html>

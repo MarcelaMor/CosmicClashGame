@@ -6,6 +6,7 @@ const choiceBtns = document.querySelectorAll('.choiceBtn')
 const userCounter = document.querySelector('#userPoints')
 const computerCounter = document.querySelector('#computerPoints')
 const tieCounter = document.querySelector('#ties')
+const gameOver = document.querySelector('#game-title')
 
 //Variable declarations
 let user
@@ -14,25 +15,26 @@ let computerPoints = 0
 let userPoints = 0
 let tiePoints = 0
 let timesPlayed = 0
-const maxRounds = 7
+const maxRounds = 5
 
 //Adding click listener to buttons
-choiceBtns.forEach((button) =>
+choiceBtns.forEach((button) => {
   button.addEventListener('click', () => {
-    user = button.textContent
-    computerTurn()
-    userText.textContent = `User: ${user}`
-    computerText.textContent = `Computer: ${computer}`
-    result = checkWinner(user, computer)
-    resultText.textContent = result
-    timesPlayed++
-    if (timesPlayed === 7) {
-      finishGame()
-    } else {
+    if (timesPlayed < maxRounds) {
+      user = button.textContent
+      computerTurn()
+      userText.textContent = `User: ${user}`
+      computerText.textContent = `Computer: ${computer}`
+      const result = checkWinner(user, computer)
+      resultText.textContent = result
+      timesPlayed++
       setPoints(result)
+      if (timesPlayed === maxRounds) {
+        finishGame()
+      }
     }
   })
-)
+})
 
 function computerTurn() {
   //Math floor = rounds down and returns the largest number
@@ -108,41 +110,15 @@ function setPoints(result) {
   }
 
   //Adds points to the corresponding element
-  userCounter.textContent = `Your points: ${userPoints}`
-  computerCounter.textContent = `Computer: ${computerPoints}`
-  tieCounter.textContent = `Tie!: ${tiePoints}`
-}
-
-function runTests() {
-  console.log(checkWinner('Rock', 'Rock') === "It's a tie!")
-  console.log(checkWinner('Paper', 'Paper') === "It's a tie!")
-  console.log(checkWinner('Scissors', 'Scissors') === "It's a tie!")
-  console.log(checkWinner('Lizard', 'Lizard') === "It's a tie!")
-  console.log(checkWinner('Spock', 'Spock') === "It's a tie!")
-
-  console.log(checkWinner('Paper', 'Rock') === 'Congratulations!')
-  console.log(checkWinner('Spock', 'Rock') === 'Congratulations!')
-  console.log(checkWinner('Scissors', 'Paper') === 'Congratulations!')
-  console.log(checkWinner('Lizard', 'Paper') === 'Congratulations!')
-  console.log(checkWinner('Rock', 'Scissors') === 'Congratulations!')
-  console.log(checkWinner('Spock', 'Scissors') === 'Congratulations!')
-  console.log(checkWinner('Rock', 'Lizard') === 'Congratulations!')
-  console.log(checkWinner('Scissors', 'Lizard') === 'Congratulations!')
-  console.log(checkWinner('Lizard', 'Spock') === 'Congratulations!')
-  console.log(checkWinner('Paper', 'Spock') === 'Congratulations!')
-
-  console.log(checkWinner('Rock', 'Paper') === 'Aww you lost!')
-  console.log(checkWinner('Lizard', 'Rock') === 'Aww you lost!')
-  console.log(checkWinner('Paper', 'Scissors') === 'Aww you lost!')
-  console.log(checkWinner('Lizard', 'Scissors') === 'Aww you lost!')
-  console.log(checkWinner('Scissors', 'Rock') === 'Aww you lost!')
-  console.log(checkWinner('Rock', 'Spock') === 'Aww you lost!')
-  console.log(checkWinner('Paper', 'Lizard') === 'Aww you lost!')
-  console.log(checkWinner('Spock', 'Lizard') === 'Aww you lost!')
-  console.log(checkWinner('Scissors', 'Spock') === 'Aww you lost!')
-  console.log(checkWinner('Spock', 'Paper') === 'Aww you lost!')
+  userCounter.textContent = `Your score: ${userPoints}`
+  computerCounter.textContent = `Computer score: ${computerPoints}`
+  tieCounter.textContent = `Ties: ${tiePoints}`
 }
 
 function finishGame() {
-    
+  gameOver.textContent = `GAME OVER`
+
+  choiceBtns.forEach((button) => {
+    button.disabled = true
+  })
 }
