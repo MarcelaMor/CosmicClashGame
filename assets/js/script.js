@@ -23,7 +23,7 @@ choiceBtns.forEach((button) => {
     if (timesPlayed < maxRounds) {
       user = button.textContent
       computerTurn()
-      userText.textContent = `User: ${user}`
+      userText.textContent = `You: ${user}`
       computerText.textContent = `Computer: ${computer}`
       const result = checkWinner(user, computer)
       resultText.textContent = result
