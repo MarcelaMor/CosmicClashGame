@@ -1,78 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Silkscreen:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+}
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(93, 121, 149);
-    background-image: url(https://images.unsplash.com/photo-1583507264623-e424bcc92e90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    margin: 5;
-    text-align: center;
+  background-image: url(https://images.unsplash.com/photo-1583507264623-e424bcc92e90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.rulesandprogress{
-    display: flex;
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.65);
+  padding: 2rem;
 }
 
-/* Rules text-box design */
-.rules-div{
-    background-color: hsla(290, 100%, 77%, 0.527);
-    width: 25vw;
+.mainbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+}
+
+#points {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 0.9rem;
+}
+
+.gameText {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+#resultText {
+  font-size: 1.2rem;
+  text-align: center;
+  height: 1rem;
+  margin: 1rem 0;
+}
+
+#game-title {
+  font-family: 'Monoton', sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-decoration: overline;
+  text-align: center;
 }
 
 #gameProgress {
-    background-color: #6868835c;
-    border: 3px solid;
-    border-radius: 25%;
-    width: 36%;
-    height: 31vh;
-    max-height: 450px;
-    max-width: 830px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Silkscreen', sans-serif;
+  font-style: normal;
 }
 
-#points p {
-    background-color: #686883b5;
-    border: 3px solid;
-    border-radius: 25%;
-    width: 25%;
-    max-height: 450px;
-    max-width: 830px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1%;
-    font-size: 1.4em;
-    font-weight: 600;
+.buttons-div {
+  align-items: center;
+  margin-bottom: 2vh;
 }
 
-#userPoints {
-    font-size: 2em;
+.buttons-div > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 15rem;
 }
 
-#userText {
-    color: #3d0b0b;
-}
-
-#computerText {
-    color: #220e5e
-}
-
-
-
-/*Design for buttons*/
 .choiceBtn {
-    line-height: 40px;
-    width: 250px;
-    border-radius: 30px;
-    padding: 30;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-right: 10px;
-    box-shadow: 12px 12px #0000008a;
-    cursor: pointer;
-    background-color: #571212;
-    color: white;
-    font-weight: 700;
+  line-height: 40px;
+  width: 250px;
+  border-radius: 30px;
+  /* padding: 30; */
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+  box-shadow: 12px 12px #0000008a;
+  cursor: pointer;
+  background-color: #571212;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Jura', sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
+.rules-div {
+  font-family: 'Silkscreen', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.rules-div p {
+  font-family: 'Jura', sans-serif;
+  font-weight: 700;
+}
